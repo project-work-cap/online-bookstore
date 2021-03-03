@@ -1,4 +1,4 @@
-package com.capgemini.onlinebookstore.dto;
+package com.capgemini.onlinebookstore.entities;
 
 public class Payment {
 	

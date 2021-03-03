@@ -1,4 +1,4 @@
-package com.capgemini.onlinebookstore.dto;
+package com.capgemini.onlinebookstore.entities;
 
 import java.util.List;
 
