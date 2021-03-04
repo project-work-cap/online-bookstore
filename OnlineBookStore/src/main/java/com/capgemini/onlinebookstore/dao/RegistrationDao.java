@@ -1,17 +1,18 @@
 package com.capgemini.onlinebookstore.dao;
 
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.capgemini.onlinebookstore.dto.UserBookStore;
+import com.capgemini.onlinebookstore.entities.UserBookStore;
 
 @Repository
-public class RegistrationDao {
+public interface RegistrationDao extends JpaRepository<UserBookStore, Long> {
+
+	//UserBookStore save(UserBookStore user);
+	@Query("SELECT user FROM UserBookStore user where user.emailId = :emailId") 
+	Optional<UserBookStore> findByEmailId(String emailId);
 	
-	public UserBookStore findByEmailId(String emailId) {
-		return null;
-	}
-	
-	public UserBookStore save(UserBookStore user) {
-		return user;
-	}
 }
