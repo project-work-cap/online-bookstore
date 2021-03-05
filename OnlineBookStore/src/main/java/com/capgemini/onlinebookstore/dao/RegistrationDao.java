@@ -2,16 +2,19 @@ package com.capgemini.onlinebookstore.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.capgemini.onlinebookstore.dto.UserBookStore;
+import com.capgemini.onlinebookstore.entities.UserBookStore;
 
 @Repository
-public class RegistrationDao {
-	
-	public UserBookStore findByEmailId(String emailId) {
+public class RegistrationDao
+{
+
+	public UserBookStore findByEmailId(String emailId)
+	{
 		return null;
 	}
-	
-	public UserBookStore save(UserBookStore user) {
+
+	public UserBookStore save(UserBookStore user)
+	{
 		return user;
 	}
 }

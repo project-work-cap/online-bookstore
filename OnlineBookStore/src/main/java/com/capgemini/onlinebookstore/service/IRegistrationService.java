@@ -1,9 +1,11 @@
 package com.capgemini.onlinebookstore.service;
 
-import com.capgemini.onlinebookstore.dto.UserBookStore;
+import com.capgemini.onlinebookstore.entities.UserBookStore;
 
-public interface IRegistrationService {
+public interface IRegistrationService
+{
 
 	UserBookStore registerUser(UserBookStore user);
+
 	UserBookStore findByEmailId(String emailId);
 }
