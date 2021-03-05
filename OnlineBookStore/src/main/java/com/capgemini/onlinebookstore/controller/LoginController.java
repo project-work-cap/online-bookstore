@@ -30,8 +30,13 @@ public class LoginController
 	@RequestMapping("/login")
 	public ResponseEntity<UserBookStore> login(@RequestBody UserBookStore user) throws UserNotFoundException
 	{
+<<<<<<< HEAD
 		UserBookStore userBookStore = userService.loginUser(user);
 		return ResponseEntity.ok().body(userBookStore);
+=======
+		return null;
+
+>>>>>>> 456a72488527a3f3aa3c996b5c77e07d9d54db3b
 	}
 
 }
