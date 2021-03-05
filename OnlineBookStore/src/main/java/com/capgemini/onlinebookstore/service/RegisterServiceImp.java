@@ -2,71 +2,53 @@ package com.capgemini.onlinebookstore.service;
 
 import java.util.Optional;
 
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.onlinebookstore.dao.RegistrationDao;
 import com.capgemini.onlinebookstore.entities.UserBookStore;
-<<<<<<< HEAD
-
-=======
 import com.capgemini.onlinebookstore.exception.EmailIdExistException;
 import com.capgemini.onlinebookstore.exception.EmptyDataException;
 import com.capgemini.onlinebookstore.exception.InvalidDataException;
->>>>>>> 456a72488527a3f3aa3c996b5c77e07d9d54db3b
+
 @Service
 public class RegisterServiceImp implements IRegistrationService
 {
 
-	CheckValidation check=new CheckValidation();
-		
+	CheckValidation check = new CheckValidation();
+
 	@Autowired
 	private RegistrationDao registrationDao;
-<<<<<<< HEAD
 
 	@Override
-	public UserBookStore registerUser(UserBookStore user)
+	public UserBookStore registerUser(UserBookStore user) throws EmptyDataException
 	{
-		user = registrationDao.save(user);
-		return user;
-=======
-	
-	
-	@Override
-	public UserBookStore registerUser(UserBookStore user) throws EmptyDataException {
-		if(user.getFirstName().equals(null) || user.getLastName().equals(null) ||
-				user.getEmailId().equals(null) || user.getPassword().equals(null) ||
-				user.getPhoneNumber().equals(null) || user.getUserGender().equals(null) ||
-				user.getUserRole().equals(null))
+		if (user.getFirstName().equals(null) || user.getLastName().equals(null) || user.getEmailId().equals(null)
+				|| user.getPassword().equals(null) || user.getPhoneNumber().equals(null)
+				|| user.getUserGender().equals(null) || user.getUserRole().equals(null))
 			throw new EmptyDataException("Data is missing");
 		boolean checkRegisterData;
-		try {
+		try
+		{
 			checkRegisterData = check.registerData(user);
-			if(findByEmailId(user.getEmailId()))
+			if (findByEmailId(user.getEmailId()))
 				throw new EmailIdExistException("Email id exist. Use another account");
-			user=registrationDao.save(user);
+			user = registrationDao.save(user);
 			return user;
-		} catch (InvalidDataException e) {
+		}
+		catch (InvalidDataException e)
+		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
->>>>>>> 456a72488527a3f3aa3c996b5c77e07d9d54db3b
 	}
 
-	@Override
-<<<<<<< HEAD
-	public UserBookStore findByEmailId(String emailId)
+	public boolean findByEmailId(String emailId)
 	{
-		return null;
-=======
-	public boolean findByEmailId(String emailId) {
-		Optional<UserBookStore>optional=registrationDao.findByEmailId(emailId);
-	     if(optional.isPresent())
-	         return true;
-	   return false;
->>>>>>> 456a72488527a3f3aa3c996b5c77e07d9d54db3b
+		Optional<UserBookStore> optional = registrationDao.findByEmailId(emailId);
+		if (optional.isPresent()) return true;
+		return false;
 	}
 
 }

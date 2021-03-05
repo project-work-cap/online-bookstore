@@ -21,66 +21,14 @@ public class UserServiceImpl implements UserService
 	@Autowired
 	private UserRepository userRepository;
 
-//	@Autowired
-//	private UserBookStore user;
-
 	@Override
 	public ApiResponse loginUser(UserBookStore user) throws UserNotFoundException
 	{
-
-//		UserBookStore user = userRepository.findById(userId)
-//				.orElseThrow(() -> new UserNotFoundException(EXCEPTION_MESSAGE + userId));
-//		return userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(EXCEPTION_MESSAGE + userId));
 		UserBookStore userBookStore = userRepository.findById(user.getUserId())
 				.orElseThrow(() -> new UserNotFoundException(EXCEPTION_MESSAGE + user.getUserId()));
-		
-		
-		return new Apiresponse(200,"Login")
+		if (!userBookStore.getPassword().equals(user.getPassword()))
+		{ throw new UserNotFoundException(EXCEPTION_MESSAGE + user.getUserId()); }
+		return new ApiResponse(200, "Login successful", null);
 	}
-//	@Override
-//	public UserBookStore getUserId(UserBookStore user)
-//	{
-//		user = userRepository.findById(null);
-//		return user;
-//	}
 
-//	@Override
-//	public String getEmailId() throws UserNotFoundException
-//	{
-//		if (userRepository.findByEmailId(user.getEmailId()).isEmpty())
-//		{
-//			throw new UserNotFoundException(EXCEPTION_MESSAGE + user.getEmailId());
-//		}
-//		else
-//		{
-//			return userRepository.findByEmailId(user.getEmailId());
-//		}
-//	}
-//
-//	@Override
-//	public String getPassword() throws UserNotFoundException
-//	{
-//		if (userRepository.findByPassword(user.getPassword()).isEmpty())
-//		{
-//			throw new UserNotFoundException(EXCEPTION_MESSAGE + user.getPassword());
-//		}
-//		else
-//		{
-//			return userRepository.findByPassword(user.getPassword());
-//		}
-//	}
-//
-//	@Override
-//	public long getUserById() throws UserNotFoundException
-//	{
-//		if (userRepository.findByUserId(user.getUserId()) == 0)
-//		{
-//			throw new UserNotFoundException(EXCEPTION_MESSAGE + user.getUserId());
-//		}
-//		else
-//		{
-//			return userRepository.findByUserId(user.getUserId());
-//		}
-//
-//	}
 }
