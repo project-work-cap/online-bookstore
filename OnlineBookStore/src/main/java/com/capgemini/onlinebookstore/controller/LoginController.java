@@ -1,6 +1,7 @@
 package com.capgemini.onlinebookstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,7 @@ import com.capgemini.onlinebookstore.service.ApiResponse;
 import com.capgemini.onlinebookstore.service.UserService;
 
 @RestController
-@RequestMapping("/home")
+@RequestMapping("/v1/")
 public class LoginController
 {
 	@Autowired
@@ -25,9 +26,10 @@ public class LoginController
 	}
 
 	@RequestMapping("/login")
-	public ApiResponse login(@RequestBody UserBookStore user) throws UserNotFoundException
+	public ResponseEntity<ApiResponse> login(@RequestBody UserBookStore user) throws UserNotFoundException
 	{
-		return userService.loginUser(user);
+
+		return ResponseEntity.ok(userService.loginUser(user));
 	}
 
 }
