@@ -8,12 +8,24 @@ public class UserBookStoreDto
 		// TODO Auto-generated constructor stub
 	}
 
+	private long userId;
 	private String firstName;
 	private String lastName;
 	private String emailId;
 	private String password;
+	private String userName;
 	private String mobileNumber;
 	private String userGender;
+
+	public long getUserId()
+	{
+		return userId;
+	}
+
+	public void setUserId(long userId)
+	{
+		this.userId = userId;
+	}
 
 	public String getFirstName()
 	{
@@ -33,6 +45,16 @@ public class UserBookStoreDto
 	public void setLastName(String lastName)
 	{
 		this.lastName = lastName;
+	}
+
+	public String getUserName()
+	{
+		return userName;
+	}
+
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
 	}
 
 	public String getEmailId()
