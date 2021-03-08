@@ -15,8 +15,6 @@
 	<description>Online book store project</description>
 	<properties>
 		<java.version>1.8</java.version>
-		<mysql.version>5.1.38</mysql.version>
-		<hibernate.version>5.3.10.Final</hibernate.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,6 +31,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
@@ -49,6 +48,17 @@
     <version>2.3.0</version>
 </dependency>
 		
+=======
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+>>>>>>> a1d7f734a4866afd404f8ed7cfc8857a3efcb63c
 		<dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-devtools</artifactId>

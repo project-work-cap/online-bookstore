@@ -25,6 +25,7 @@ import com.capgemini.onlinebookstore.service.RegistrationService;
 
 @RestController
 @RequestMapping("/v1/registration")
+<<<<<<< HEAD
 public class RegistrationController {
 	
 	@Autowired
@@ -63,6 +64,20 @@ public class RegistrationController {
 		dto.setPassword(user.getPassword());
 		dto.setUserGender(user.getUserGender());
 		return dto;
+=======
+public class RegistrationController
+{
+
+	@Autowired
+	private IRegistrationService service;
+
+	@PostMapping("/details")
+	public ResponseEntity<UserBookStore> addDistributor(@RequestBody UserBookStore user) throws EmptyDataException
+	{
+		user = service.registerUser(user);
+		ResponseEntity<UserBookStore> response = new ResponseEntity<>(user, HttpStatus.OK);
+		return response;
+>>>>>>> a1d7f734a4866afd404f8ed7cfc8857a3efcb63c
 	}
 
 }
