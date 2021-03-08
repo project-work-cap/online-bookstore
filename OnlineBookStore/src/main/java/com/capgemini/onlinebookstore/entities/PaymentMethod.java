@@ -1,9 +1,19 @@
 package com.capgemini.onlinebookstore.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class PaymentMethod {
+	@Id
+	@Column
 	private String cashOnDelivery ;
+	@Column
 	private String upi;
+	@Column
 	private String card;
+	@Column
 	public String getCashOnDelivery() {
 		return cashOnDelivery;
 	}

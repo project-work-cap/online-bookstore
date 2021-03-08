@@ -2,13 +2,24 @@ package com.capgemini.onlinebookstore.entities;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Category {
 	
+	@Id
+	@Column
 	private long categoryId;
+	@Column
 	private String categoryName;
+	@Column
 	private String rating;
+	@Column
 	private String description;
-	private List<Book> book;
+//	@Column
+//	private List<Book> book;
+	@Column
 	public long getCategoryId() {
 		return categoryId;
 	}
@@ -33,12 +44,12 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public List<Book> getBook() {
-		return book;
-	}
-	public void setBook(List<Book> book) {
-		this.book = book;
-	}
+//	public List<Book> getBook() {
+//		return book;
+//	}
+//	public void setBook(List<Book> book) {
+//		this.book = book;
+//	}
 	
 	
 

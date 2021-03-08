@@ -1,10 +1,23 @@
 package com.capgemini.onlinebookstore.entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class UpdatePassword {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
 	
 	private long userId;
+	@Column
 	private String oldPassword;
+	@Column
 	private String newPassword;
+	@Column
 	private String emailId;
 	
 	

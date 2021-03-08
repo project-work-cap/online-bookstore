@@ -3,17 +3,32 @@ package com.capgemini.onlinebookstore.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
 	
+	@Id
+	@Column
 	private long bookId;
+	@Column
 	private double bookPrice;
+	@Column
 	private String bookTitle;
+	@Column
 	private String bookAuthor;
+	@Column
 	private String bookLanguage;
+	@Column
 	private LocalDateTime publicationDate;
-	private List<Role> publisher;
+//	@Column
+//	private List<Role> publisher;
+	@Column
 	private long isbn;
-	private Category catagory;
+//	@Column
+//	private Category catagory;
 	
 	public long getBookId() {
 		return bookId;
@@ -51,24 +66,24 @@ public class Book {
 	public void setPublicationDate(LocalDateTime publicationDate) {
 		this.publicationDate = publicationDate;
 	}
-	public List<Role> getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(List<Role> publisher) {
-		this.publisher = publisher;
-	}
+//	public List<Role> getPublisher() {
+//		return publisher;
+//	}
+//	public void setPublisher(List<Role> publisher) {
+//		this.publisher = publisher;
+//	}
 	public long getIsbn() {
 		return isbn;
 	}
 	public void setIsbn(long isbn) {
 		this.isbn = isbn;
 	}
-	public Category getCatagory() {
-		return catagory;
-	}
-	public void setCatagory(Category catagory) {
-		this.catagory = catagory;
-	}
+//	public Category getCatagory() {
+//		return catagory;
+//	}
+//	public void setCatagory(Category catagory) {
+//		this.catagory = catagory;
+//	}
 	
 	
 	

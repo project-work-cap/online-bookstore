@@ -1,5 +1,6 @@
 package com.capgemini.onlinebookstore.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,13 +12,21 @@ public class UserBookStore
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column
 	private long userId;
+	@Column
 	private String firstName;
+	@Column
 	private String lastName;
+	@Column
 	private String userName;
+	@Column
 	private String emailId;
+	@Column
 	private String password;
+	@Column
 	private String mobileNumber;
+	@Column
 	private String userGender;
 //	private List<Role> userRole;
 //	private Cart cart;

@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 		if (bookStore.getPassword().equals(updatePassword.getOldPassword())) {
 			bookStore.setPassword(updatePassword.getNewPassword());
 			userRepository.saveAndFlush(bookStore);
-			return new ApiResponse(200, "Pssword Updated scuessfully", converter.modelToDto(bookStore));
+			return new ApiResponse(200, "Password Updated sucessfully", converter.modelToDto(bookStore));
 		} else {
 			throw new PasswordException("Please enter correct password");
 		}
