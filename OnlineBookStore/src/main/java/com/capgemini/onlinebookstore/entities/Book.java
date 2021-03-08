@@ -3,8 +3,12 @@ package com.capgemini.onlinebookstore.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Book {
-	
+	@Id
 	private long bookId;
 	private double bookPrice;
 	private String bookTitle;

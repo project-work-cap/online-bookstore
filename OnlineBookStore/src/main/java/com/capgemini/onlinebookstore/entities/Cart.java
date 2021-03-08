@@ -2,7 +2,11 @@ package com.capgemini.onlinebookstore.entities;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+@Entity
 public class Cart {
+	@Id
 	private long cartId;
 	private int quantity;
 	private double totalPrice;

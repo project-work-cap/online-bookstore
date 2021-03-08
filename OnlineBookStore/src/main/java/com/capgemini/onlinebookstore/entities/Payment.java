@@ -1,7 +1,11 @@
 package com.capgemini.onlinebookstore.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Payment {
-	
+	@Id
 	private long paymentId;
 	private PaymentMethod paymentMethod;
 	

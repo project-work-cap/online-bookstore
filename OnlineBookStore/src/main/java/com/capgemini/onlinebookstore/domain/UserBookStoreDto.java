@@ -1,32 +1,33 @@
-package com.capgemini.onlinebookstore.entities;
+package com.capgemini.onlinebookstore.domain;
 
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Entity
-public class UserBookStore {
+
+public class UserBookStoreDto {
 	
-	@Id
-	private long userId;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private String emailId;
+	@NotNull
+	@Min(8)
 	private String password;
+	@Min(8)
+	private String confirmPassword;
+	@Size(min = 10 , max = 10)
 	private String phoneNumber;
+	@NotNull
 	private String userGender;
-	private List<Role> userRole;
-	private  Cart cart;
-	private List<Payment> paymentList;
-	private List<Order> orderList;
 	
-	public long getUserId() {
-		return userId;
-	}
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -51,6 +52,12 @@ public class UserBookStore {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -63,31 +70,6 @@ public class UserBookStore {
 	public void setUserGender(String userGender) {
 		this.userGender = userGender;
 	}
-	public List<Role> getUserRole() {
-		return userRole;
-	}
-	public void setUserRole(List<Role> userRole) {
-		this.userRole = userRole;
-	}
-	public Cart getCart() {
-		return cart;
-	}
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
-	public List<Payment> getPaymentList() {
-		return paymentList;
-	}
-	public void setPaymentList(List<Payment> paymentList) {
-		this.paymentList = paymentList;
-	}
-	public List<Order> getOrderList() {
-		return orderList;
-	}
-	public void setOrderList(List<Order> orderList) {
-		this.orderList = orderList;
-	}
-	
 	
 	
 	

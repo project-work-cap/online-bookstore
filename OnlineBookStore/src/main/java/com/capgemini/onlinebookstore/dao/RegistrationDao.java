@@ -11,8 +11,9 @@ import com.capgemini.onlinebookstore.entities.UserBookStore;
 @Repository
 public interface RegistrationDao extends JpaRepository<UserBookStore, Long> {
 
+	/*
 	//UserBookStore save(UserBookStore user);
 	@Query("SELECT user FROM UserBookStore user where user.emailId = :emailId") 
 	Optional<UserBookStore> findByEmailId(String emailId);
-	
+	*/
 }

@@ -11,6 +11,7 @@ import com.capgemini.onlinebookstore.service.UserServiceImpl;
 @RestController
 public class LoginController
 {
+	/*
 
 	@Autowired
 	UserServiceImpl userServiceImpl = new UserServiceImpl();
@@ -29,4 +30,5 @@ public class LoginController
 
 	}
 
+    */
 }

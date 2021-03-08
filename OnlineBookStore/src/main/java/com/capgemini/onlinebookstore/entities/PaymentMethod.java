@@ -1,27 +1,26 @@
 package com.capgemini.onlinebookstore.entities;
 
-public class PaymentMethod {
-	private String cashOnDelivery ;
-	private String upi;
-	private String card;
-	public String getCashOnDelivery() {
-		return cashOnDelivery;
-	}
-	public void setCashOnDelivery(String cashOnDelivery) {
-		this.cashOnDelivery = cashOnDelivery;
-	}
-	public String getUpi() {
-		return upi;
-	}
-	public void setUpi(String upi) {
-		this.upi = upi;
-	}
-	public String getCard() {
-		return card;
-	}
-	public void setCard(String card) {
-		this.card = card;
-	}
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class PaymentMethod {
+	@Id
+	private long paymentMethodId;
+	private String paymentType ;
+	public long getPaymentMethodId() {
+		return paymentMethodId;
+	}
+	public void setPaymentMethodId(long paymentMethodId) {
+		this.paymentMethodId = paymentMethodId;
+	}
+	public String getPaymentType() {
+		return paymentType;
+	}
+	public void setPaymentType(String paymentType) {
+		this.paymentType = paymentType;
+	}
+	
+	
 	
 }
