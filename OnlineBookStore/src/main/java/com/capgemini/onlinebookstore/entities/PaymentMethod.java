@@ -1,5 +1,6 @@
 package com.capgemini.onlinebookstore.entities;
 
+<<<<<<< HEAD
 
 import javax.persistence.Column;
 >>>>>>> a1d7f734a4866afd404f8ed7cfc8857a3efcb63c
@@ -14,12 +15,12 @@ public class PaymentMethod {
 	public long getPaymentMethodId() {
 		return paymentMethodId;
 	@Column
+=======
+public class PaymentMethod {
+>>>>>>> parent of a1d7f73 (added entities)
 	private String cashOnDelivery ;
-	@Column
 	private String upi;
-	@Column
 	private String card;
-	@Column
 	public String getCashOnDelivery() {
 		return cashOnDelivery;
 	}

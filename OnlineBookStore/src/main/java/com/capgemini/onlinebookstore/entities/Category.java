@@ -2,6 +2,7 @@ package com.capgemini.onlinebookstore.entities;
 
 import java.util.List;
 
+<<<<<<< HEAD
 <
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,16 +15,15 @@ public class Category {
 	@Id
 	@Column
 >>>>>>> a1d7f734a4866afd404f8ed7cfc8857a3efcb63c
+=======
+public class Category {
+	
+>>>>>>> parent of a1d7f73 (added entities)
 	private long categoryId;
-	@Column
 	private String categoryName;
-	@Column
 	private String rating;
-	@Column
 	private String description;
-//	@Column
-//	private List<Book> book;
-	@Column
+	private List<Book> book;
 	public long getCategoryId() {
 		return categoryId;
 	}
@@ -48,12 +48,12 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-//	public List<Book> getBook() {
-//		return book;
-//	}
-//	public void setBook(List<Book> book) {
-//		this.book = book;
-//	}
+	public List<Book> getBook() {
+		return book;
+	}
+	public void setBook(List<Book> book) {
+		this.book = book;
+	}
 	
 	
 

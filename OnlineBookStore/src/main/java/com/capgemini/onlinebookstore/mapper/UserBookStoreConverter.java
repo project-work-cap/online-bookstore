@@ -31,7 +31,6 @@ public class UserBookStoreConverter
 	public UserBookStore dtoToModel(UserBookStoreDto userDto)
 	{
 		UserBookStore user = new UserBookStore();
-		user.setUserId(userDto.getUserId());
 		user.setFirstName(userDto.getFirstName());
 		user.setLastName(userDto.getLastName());
 		user.setUserName(userDto.getUserName());
