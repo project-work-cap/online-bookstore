@@ -1,5 +1,6 @@
 package com.capgemini.onlinebookstore.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,13 @@ public class BookServiceImpl implements BookService
 			return new ApiResponse(HttpStatus.OK.value(), "Updation successfully");
 		}
 
+	}
+
+	@Override
+	public ApiResponse getAllBook(BookDto bookDto) throws DataNotFoundException, DuplicateDataException
+	{
+		List<Book> book = bookRepository.findAll();
+		return new ApiResponse(HttpStatus.OK.value(), "List of books", book);
 	}
 
 }

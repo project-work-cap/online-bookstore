@@ -13,4 +13,6 @@ public interface BookService
 
 	ApiResponse updateBook(BookDto bookDto) throws DataNotFoundException, DuplicateDataException;
 
+	ApiResponse getAllBook(BookDto bookDto) throws DataNotFoundException, DuplicateDataException;
+
 }

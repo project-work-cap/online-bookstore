@@ -2,6 +2,7 @@ package com.capgemini.onlinebookstore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,6 +39,12 @@ public class AdminController
 			throws DataNotFoundException, DuplicateDataException
 	{
 		return ResponseEntity.ok(bookService.updateBook(bookDto));
+	}
+
+	@GetMapping("/getbooks")
+	public ResponseEntity<ApiResponse> getBook(BookDto bookDto) throws DataNotFoundException, DuplicateDataException
+	{
+		return ResponseEntity.ok(bookService.getAllBook(bookDto));
 	}
 
 }

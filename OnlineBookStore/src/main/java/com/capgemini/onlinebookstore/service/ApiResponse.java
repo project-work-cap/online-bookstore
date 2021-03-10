@@ -24,7 +24,6 @@ public class ApiResponse
 
 	public ApiResponse(int status, String message, Object result)
 	{
-		super();
 		this.status = status;
 		this.message = message;
 		this.result = result;
@@ -40,7 +39,6 @@ public class ApiResponse
 	 */
 	public ApiResponse(int status, String message)
 	{
-		super();
 		this.status = status;
 		this.message = message;
 	}
