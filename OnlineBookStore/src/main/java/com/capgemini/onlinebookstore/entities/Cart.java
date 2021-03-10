@@ -2,19 +2,21 @@ package com.capgemini.onlinebookstore.entities;
 
 import java.util.List;
 
-<<<<<<< HEAD
-import javax.persistence.Entity;
+import javax.persistence.Column;
 import javax.persistence.Id;
 
-@Entity
-=======
->>>>>>> parent of a1d7f73 (added entities)
 public class Cart {
+	@Id
+	@Column
 	private long cartId;
+	@Column
 	private int quantity;
+	@Column
 	private double totalPrice;
-	private List<Book> bookList;
-	private Order order;
+//	@Column
+//	private List<Book> bookList;
+//	@Column
+//	private Order order;
 	
 	public long getCartId() {
 		return cartId;
@@ -34,18 +36,18 @@ public class Cart {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	public List<Book> getBookList() {
-		return bookList;
-	}
-	public void setBookList(List<Book> bookList) {
-		this.bookList = bookList;
-	}
-	public Order getOrder() {
-		return order;
-	}
-	public void setOrder(Order order) {
-		this.order = order;
-	}
+//	public List<Book> getBookList() {
+//		return bookList;
+//	}
+//	public void setBookList(List<Book> bookList) {
+//		this.bookList = bookList;
+//	}
+//	public Order getOrder() {
+//		return order;
+//	}
+//	public void setOrder(Order order) {
+//		this.order = order;
+//	}
 
 	
 }

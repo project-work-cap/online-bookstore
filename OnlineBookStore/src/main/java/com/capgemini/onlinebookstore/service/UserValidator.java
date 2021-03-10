@@ -5,7 +5,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.capgemini.onlinebookstore.domain.UserBookStoreDto;
-import com.capgemini.onlinebookstore.exception.InvalidDataException;
 
 @Component
 public class UserValidator implements Validator {
@@ -25,12 +24,12 @@ public class UserValidator implements Validator {
 			errors.rejectValue("firstName", "firstName.invalid","First Name must cantain only Alphabets" );
 		if(!user.getLastName().matches(regex))
 			errors.rejectValue("lastName", "lastName.invalid","Last Name must cantain only Alphabets" );
-		regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
-		if(!user.getEmailId().matches(regex))
-			errors.rejectValue("emailId", "emailId.invalid","Wrong input for email Id");
-		regex = "(0/91)?[7-9][0-9]{9}";
-		if(!user.getPhoneNumber().matches(regex))
-			errors.rejectValue("phoneNumber", "phoneNumber.invalid","Phone number is incorrect");
+		//regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+		//if(!user.getEmailId().matches(regex))
+		//	errors.rejectValue("emailId", "emailId.invalid","Wrong input for email Id");
+		//regex = "(0/91)?[7-9][0-9]{9}";
+		//if(!user.getPhoneNumber().matches(regex))
+		//	errors.rejectValue("phoneNumber", "phoneNumber.invalid","Phone number is incorrect");
 		if(!user.getPassword().equals(user.getConfirmPassword()))
 			errors.rejectValue("password", "password.invalid","Password did not match");
 		

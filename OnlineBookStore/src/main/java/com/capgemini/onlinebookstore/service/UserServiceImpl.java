@@ -26,11 +26,13 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public ApiResponse loginUser(UserBookStoreDto userDto) throws UserNotFoundException {
+		
 		UserBookStore userBookStore = userRepository.findById(userDto.getUserId()).orElseThrow(
 				() -> new UserNotFoundException("No user found with this username " + userDto.getUserName()));
 		if (!userBookStore.getPassword().equals(userDto.getPassword())) {
 			throw new UserNotFoundException("No user found with this username " + userDto.getUserName());
 		}
+		
 		return new ApiResponse(200, "Login successful", converter.modelToDto(userBookStore));
 	}
 
@@ -43,7 +45,7 @@ public class UserServiceImpl implements UserService {
 		if (bookStore.getPassword().equals(updatePassword.getOldPassword())) {
 			bookStore.setPassword(updatePassword.getNewPassword());
 			userRepository.saveAndFlush(bookStore);
-			return new ApiResponse(200, "Pssword Updated scuessfully", converter.modelToDto(bookStore));
+			return new ApiResponse(200, "Password Updated sucessfully", converter.modelToDto(bookStore));
 		} else {
 			throw new PasswordException("Please enter correct password");
 		}

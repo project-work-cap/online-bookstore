@@ -17,12 +17,12 @@ public class UserBookStoreConverter
 	public UserBookStoreDto modelToDto(UserBookStore user)
 	{
 		UserBookStoreDto userDto = new UserBookStoreDto();
-		userDto.setUserId(user.getUserId());
+		//userDto.setUserId(user.getUserId());
 		userDto.setFirstName(user.getFirstName());
 		userDto.setLastName(user.getLastName());
 		userDto.setUserName(user.getUserName());
 		userDto.setEmailId(user.getEmailId());
-		userDto.setMobileNumber(user.getMobileNumber());
+		userDto.setPhoneNumber(user.getMobileNumber());
 		userDto.setPassword(user.getPassword());
 		userDto.setUserGender(user.getUserGender());
 		return userDto;
@@ -31,11 +31,12 @@ public class UserBookStoreConverter
 	public UserBookStore dtoToModel(UserBookStoreDto userDto)
 	{
 		UserBookStore user = new UserBookStore();
+		//user.setUserId(userDto.getUserId());
 		user.setFirstName(userDto.getFirstName());
 		user.setLastName(userDto.getLastName());
 		user.setUserName(userDto.getUserName());
 		user.setEmailId(userDto.getEmailId());
-		user.setMobileNumber(userDto.getMobileNumber());
+		user.setMobileNumber(userDto.getPhoneNumber());
 		user.setPassword(userDto.getPassword());
 		user.setUserGender(userDto.getUserGender());
 		return user;

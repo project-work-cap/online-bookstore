@@ -15,17 +15,8 @@ import com.capgemini.onlinebookstore.service.ApiResponse;
 import com.capgemini.onlinebookstore.service.UserService;
 
 @RestController
-<<<<<<< HEAD
-public class LoginController
-{
-	/*
-
-	@Autowired
-	UserServiceImpl userServiceImpl = new UserServiceImpl();
-=======
 @RequestMapping("/v1/registration")
 public class LoginController {
->>>>>>> a1d7f734a4866afd404f8ed7cfc8857a3efcb63c
 	@Autowired
 	UserService userService;
 
@@ -49,5 +40,4 @@ public class LoginController {
 		return ResponseEntity.ok(userService.forgotPassword(forgotPassword));
 		}
 
-    */
 }
