@@ -3,11 +3,26 @@ package com.capgemini.onlinebookstore;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class OnlineBookStoreApplication {
+/**
+ * The spring boot application main class contains main method.
+ * 
+ * @author arivazs
+ *
+ */
 
-	public static void main(String[] args) {
+@SpringBootApplication
+public class OnlineBookStoreApplication
+{
+
+	/**
+	 * The main method of the application.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args)
+	{
 		SpringApplication.run(OnlineBookStoreApplication.class, args);
+
 	}
 
 }

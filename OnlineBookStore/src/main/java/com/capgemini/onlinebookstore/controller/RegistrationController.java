@@ -1,7 +1,5 @@
 package com.capgemini.onlinebookstore.controller;
 
-
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +18,22 @@ import com.capgemini.onlinebookstore.service.RegistrationService;
 @RequestMapping("/v2/registration")
 public class RegistrationController
 {
-	
+
 	@Autowired
 	private RegistrationService service;
-	
+
 	@PostMapping("/register")
-	public ResponseEntity<UserBookStoreDto>addUser(@Valid @RequestBody UserBookStoreDto dto) throws EmptyDataException{
-    	return new ResponseEntity<>(service.registerUser(dto),HttpStatus.OK);
-    }
-	
-	
-	
+	public ResponseEntity<UserBookStoreDto> addUser(@Valid @RequestBody UserBookStoreDto dto) throws EmptyDataException
+	{
+		return new ResponseEntity<>(service.registerUser(dto), HttpStatus.OK);
+	}
+
+//	@PostMapping("/updatepicture")
+//	public ResponseEntity<ApiResponse> addPicture(@RequestParam("file") MultipartFile file)
+//			throws DataNotFoundException, IOException
+//	{
+//
+//		service.uploadPicture(file);
+//		return ResponseEntity.status(HttpStatus.OK).body(new ApiResponse("Picture uploaded successfully"));
+//	}
 }

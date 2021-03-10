@@ -1,81 +1,126 @@
 package com.capgemini.onlinebookstore.entities;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Book {
-	
+public class Book
+{
 	@Id
-	@Column
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long bookId;
-	@Column
 	private double bookPrice;
-	@Column
 	private String bookTitle;
-	@Column
 	private String bookAuthor;
-	@Column
 	private String bookLanguage;
-	@Column
-	private LocalDateTime publicationDate;
-//	@Column
-//	private List<Role> publisher;
-	@Column
+	private LocalDateTime publicationDate = LocalDateTime.now();
+	private String publisher;
+	private byte[] bookImage;
 	private long isbn;
-//	@Column
+	private int bookQuantity;
 //	private Category catagory;
-	
-	public long getBookId() {
+
+	public long getBookId()
+	{
 		return bookId;
 	}
-	public void setBookId(long bookId) {
+
+	public int getBookQuantity()
+	{
+		return bookQuantity;
+	}
+
+	public void setBookQuantity(int bookQuantity)
+	{
+		this.bookQuantity = bookQuantity;
+	}
+
+	public void setBookId(long bookId)
+	{
 		this.bookId = bookId;
 	}
-	public double getBookPrice() {
+
+	public byte[] getBookImage()
+	{
+		return bookImage;
+	}
+
+	public void setBookImage(byte[] bookImage)
+	{
+		this.bookImage = bookImage;
+	}
+
+	public double getBookPrice()
+	{
 		return bookPrice;
 	}
-	public void setBookPrice(double bookPrice) {
+
+	public void setBookPrice(double bookPrice)
+	{
 		this.bookPrice = bookPrice;
 	}
-	public String getBookTitle() {
+
+	public String getBookTitle()
+	{
 		return bookTitle;
 	}
-	public void setBookTitle(String bookTitle) {
+
+	public void setBookTitle(String bookTitle)
+	{
 		this.bookTitle = bookTitle;
 	}
-	public String getBookAuthor() {
+
+	public String getBookAuthor()
+	{
 		return bookAuthor;
 	}
-	public void setBookAuthor(String bookAuthor) {
+
+	public void setBookAuthor(String bookAuthor)
+	{
 		this.bookAuthor = bookAuthor;
 	}
-	public String getBookLanguage() {
+
+	public String getBookLanguage()
+	{
 		return bookLanguage;
 	}
-	public void setBookLanguage(String bookLanguage) {
+
+	public void setBookLanguage(String bookLanguage)
+	{
 		this.bookLanguage = bookLanguage;
 	}
-	public LocalDateTime getPublicationDate() {
+
+	public LocalDateTime getPublicationDate()
+	{
 		return publicationDate;
 	}
-	public void setPublicationDate(LocalDateTime publicationDate) {
+
+	public void setPublicationDate(LocalDateTime publicationDate)
+	{
 		this.publicationDate = publicationDate;
 	}
-//	public List<Role> getPublisher() {
-//		return publisher;
-//	}
-//	public void setPublisher(List<Role> publisher) {
-//		this.publisher = publisher;
-//	}
-	public long getIsbn() {
+
+	public String getPublisher()
+	{
+		return publisher;
+	}
+
+	public void setPublisher(String publisher)
+	{
+		this.publisher = publisher;
+	}
+
+	public long getIsbn()
+	{
 		return isbn;
 	}
-	public void setIsbn(long isbn) {
+
+	public void setIsbn(long isbn)
+	{
 		this.isbn = isbn;
 	}
 //	public Category getCatagory() {
@@ -84,8 +129,5 @@ public class Book {
 //	public void setCatagory(Category catagory) {
 //		this.catagory = catagory;
 //	}
-	
-	
-	
 
 }

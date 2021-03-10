@@ -1,87 +1,149 @@
 package com.capgemini.onlinebookstore.domain;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.capgemini.onlinebookstore.entities.UserBookStore;
+
+/**
+ * This is the DTO class for the UserBookStore entity class.
+ * 
+ * @author arivazs
+ * @see UserBookStore entity class for true identity
+ *
+ */
 public class UserBookStoreDto
 {
 
-	@NotNull(message = "first name must not be empty")
+	/**
+	 * Default constructor.
+	 */
+	public UserBookStoreDto()
+	{
+		super();
+	}
+
+	@NotNull
+//	@NotBlank(message = "firstName is mandatory")
 	private String firstName;
-	@NotNull(message = "last name must not be empty")
+
+	@NotNull
 	private String lastName;
-	@NotNull(message = "emailId must not be empty")
+
+	@NotNull
+//	@NotBlank(message = "emailId is mandatory")
+//	@Email
 	private String emailId;
-	@NotNull(message = "password name must not be empty")
-	//@Min(8)
-	private String password;
-	//@Min(8)
-	@NotNull(message = "forget to enter confirm password")
-	private String confirmPassword;
-	@NotNull(message = "Phone Number name must not be empty")
-	@Size(min = 10 , max = 10)
-	private String phoneNumber;
-	@NotNull(message = "password name must not be empty")
-	private String userGender;
+
+	@NotNull
+//	@NotBlank(message = "Password is mandatory")
+	private String userPassword;
+
+//	@NotNull
+//	@NotBlank(message = "userName is mandatory")
 	private String userName;
-	private long userId;
-	
-	public long getUserId() {
-		return userId;
-	}
-	public void setUserId(long userId) {
-		this.userId = userId;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getFirstName() {
+
+	@Size(min = 10, max = 10)
+//	@NotNull
+//	@NotBlank(message = "Mobile number is mandatory")
+//	@Size(min = 10, message = "Must be 10 digits")
+//	@Pattern(regexp = "^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message = "Mobile number is invalid")
+	private String mobileNumber;
+
+	@NotNull
+	private String userGender;
+
+	private String confirmPassword;
+	private byte[] profilePicture;
+
+	public String getFirstName()
+	{
 		return firstName;
 	}
-	public void setFirstName(String firstName) {
+
+	public void setFirstName(String firstName)
+	{
 		this.firstName = firstName;
 	}
-	public String getLastName() {
+
+	public byte[] getProfilePicture()
+	{
+		return profilePicture;
+	}
+
+	public void setProfilePicture(byte[] profilePicture)
+	{
+		this.profilePicture = profilePicture;
+	}
+
+	public String getLastName()
+	{
 		return lastName;
 	}
-	public void setLastName(String lastName) {
+
+	public void setLastName(String lastName)
+	{
 		this.lastName = lastName;
 	}
-	public String getEmailId() {
+
+	public String getUserName()
+	{
+		return userName;
+	}
+
+	public void setUserName(String userName)
+	{
+		this.userName = userName;
+	}
+
+	public String getEmailId()
+	{
 		return emailId;
 	}
-	public void setEmailId(String emailId) {
+
+	public void setEmailId(String emailId)
+	{
 		this.emailId = emailId;
 	}
-	public String getPassword() {
-		return password;
+
+	public String getUserPassword()
+	{
+		return userPassword;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setUserPassword(String userPassword)
+	{
+		this.userPassword = userPassword;
 	}
-	public String getConfirmPassword() {
-		return confirmPassword;
+
+	public String getMobileNumber()
+	{
+		return mobileNumber;
 	}
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
+
+	public void setMobileNumber(String mobileNumber)
+	{
+		this.mobileNumber = mobileNumber;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-	public String getUserGender() {
+
+	public String getUserGender()
+	{
 		return userGender;
 	}
-	public void setUserGender(String userGender) {
+
+	public void setUserGender(String userGender)
+	{
 		this.userGender = userGender;
 	}
-	
-	
-	
+
+	public String getConfirmPassword()
+	{
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword)
+	{
+		this.confirmPassword = confirmPassword;
+	}
+
 }

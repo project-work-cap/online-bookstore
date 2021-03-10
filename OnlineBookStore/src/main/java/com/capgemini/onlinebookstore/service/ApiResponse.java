@@ -1,8 +1,18 @@
 package com.capgemini.onlinebookstore.service;
 
+/**
+ * This is ApiResponse class to provide API Responses of the required controller
+ * and service where ever required.
+ * 
+ * @author arivazs
+ *
+ */
 public class ApiResponse
 {
 
+	/**
+	 * Default constructor.
+	 */
 	public ApiResponse()
 	{
 		super();
@@ -18,6 +28,26 @@ public class ApiResponse
 		this.status = status;
 		this.message = message;
 		this.result = result;
+	}
+
+	/**
+	 * parameterized constructor.
+	 * 
+	 * @param status  to provide the status of the ApiResponse.
+	 * @param message to provide the default message of the ApiResponse.
+	 * @param result  to provide the details of the returned Object as a result of
+	 *                the ApiResponse.
+	 */
+	public ApiResponse(int status, String message)
+	{
+		super();
+		this.status = status;
+		this.message = message;
+	}
+
+	public ApiResponse(String message)
+	{
+		this.message = message;
 	}
 
 	public int getStatus()

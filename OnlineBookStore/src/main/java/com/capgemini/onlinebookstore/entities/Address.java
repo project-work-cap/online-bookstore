@@ -1,24 +1,12 @@
 package com.capgemini.onlinebookstore.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class Address {
 	
-	@Id
-	@Column
 	private long addressId;
-	@Column
 	private String doorNumber;
-	@Column
 	private String addressStreet;
-	@Column
 	private String addressCity;
-	@Column
 	private String addressState;
-	@Column
 	private int addressPinCode;
 	
 	public long getAddressId() {

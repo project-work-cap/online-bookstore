@@ -1,46 +1,67 @@
 package com.capgemini.onlinebookstore.entities;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
+/**
+ * Here is the main entity we will be using to deal with the database.
+ * 
+ * @author arivazs
+ *
+ */
 @Entity
 public class UserBookStore
 {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
-	private long userId;
-	@Column
+	private Long userId;
 	private String firstName;
-	@Column
 	private String lastName;
-	@Column
 	private String userName;
-	@Column
 	private String emailId;
-	@Column
-	private String password;
-	@Column
+	private String userPassword;
 	private String mobileNumber;
-	@Column
 	private String userGender;
+	private String confirmPassword;
+	@Lob
+	private byte[] profilePicture;
 //	private List<Role> userRole;
 //	private Cart cart;
 //	private List<Payment> paymentList;
 //	private List<Order> orderList;
 
-	public long getUserId()
+	public Long getUserId()
 	{
 		return userId;
 	}
 
-	public void setUserId(long userId)
+	public void setUserId(Long userId)
 	{
 		this.userId = userId;
+	}
+
+	public byte[] getProfilePicture()
+	{
+		return profilePicture;
+	}
+
+	public void setProfilePicture(byte[] profilePicture)
+	{
+		this.profilePicture = profilePicture;
+	}
+
+	public String getConfirmPassword()
+	{
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword)
+	{
+		this.confirmPassword = confirmPassword;
 	}
 
 	public String getUserName()
@@ -83,14 +104,14 @@ public class UserBookStore
 		this.emailId = emailId;
 	}
 
-	public String getPassword()
+	public String getUserPassword()
 	{
-		return password;
+		return userPassword;
 	}
 
-	public void setPassword(String password)
+	public void setUserPassword(String userPassword)
 	{
-		this.password = password;
+		this.userPassword = userPassword;
 	}
 
 	public String getMobileNumber()

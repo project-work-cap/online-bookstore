@@ -2,10 +2,11 @@ DROP DATABASE IF EXISTS onlinebookstore;
 CREATE DATABASE onlinebookstore;
 USE onlinebookstore;
 
-CREATE TABLE user_bookstore(
+CREATE TABLE user_book_store(
 	user_id INT PRIMARY KEY,
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
+    user_name varchar(30),
 	email_id VARCHAR(50),
 	user_password VARCHAR(50),
 	mobile_number VARCHAR(30),
@@ -31,6 +32,7 @@ CREATE TABLE book(
 	publisher VARCHAR(50),
 	book_image BLOB,
 	isbn  INT,
+    book_quantity INT,
     category_id INT
 );
 
@@ -84,12 +86,12 @@ CREATE TABLE invoice(
 );
 
 
-ALTER TABLE user_bookstore
+ALTER TABLE user_book_store
 ADD FOREIGN KEY (cart_id) REFERENCES cart(cart_id),
 ADD FOREIGN KEY (payment_id) REFERENCES payment(payment_id);
 
 ALTER TABLE role_bookstore
-ADD FOREIGN KEY (user_id) REFERENCES user_bookstore(user_id);
+ADD FOREIGN KEY (user_id) REFERENCES user_book_store(user_id);
 
 ALTER TABLE book
 ADD	FOREIGN KEY (category_id) REFERENCES category(category_id);
@@ -108,7 +110,7 @@ ADD FOREIGN KEY (book_id) REFERENCES book(book_id);
 
 ALTER TABLE invoice
 ADD FOREIGN KEY (book_order_id) REFERENCES book_order(book_order_id),
-ADD FOREIGN KEY (user_id) REFERENCES user_bookstore(user_id),
+ADD FOREIGN KEY (user_id) REFERENCES user_book_store(user_id),
 ADD FOREIGN KEY (address_id) REFERENCES user_address(address_id);
 
 INSERT INTO category VALUES (1,'thriller','good','a book containing thriller story');
@@ -117,11 +119,11 @@ INSERT INTO category VALUES (3,'scifi','worst','a book containing scifi story');
 INSERT INTO category VALUES (4,'thriller','average','a book containing thriller story');
 INSERT INTO category VALUES (5,'devotional','best','a book containing devotional story');
 
-INSERT INTO book VALUES (1, 33.30,'aaa','ajith','tamil','2012-06-18 10:34:09','ajith','',11111,1);
-INSERT INTO book VALUES (2, 43.30,'bbb','vijay','english','2013-06-18 11:34:09','vijay','',22222,2);
-INSERT INTO book VALUES (3, 53.30,'ccc','surya','telugu','2014-06-18 12:34:09','surya','',33333,3);
-INSERT INTO book VALUES (4, 63.30,'ddd','karthi','hindi','2015-06-18 01:34:09','karthi','',44444,4);
-INSERT INTO book VALUES (5, 73.30,'eee','kumar','tamil','2016-06-18 09:34:09','kumar','',55555,5);
+INSERT INTO book VALUES (1, 33.30,'aaa','ajith','tamil','2012-06-18 10:34:09','ajith','',11111,10,1);
+INSERT INTO book VALUES (2, 43.30,'bbb','vijay','english','2013-06-18 11:34:09','vijay','',22222,20,2);
+INSERT INTO book VALUES (3, 53.30,'ccc','surya','telugu','2014-06-18 12:34:09','surya','',33333,10,3);
+INSERT INTO book VALUES (4, 63.30,'ddd','karthi','hindi','2015-06-18 01:34:09','karthi','',44444,40,4);
+INSERT INTO book VALUES (5, 73.30,'eee','kumar','tamil','2016-06-18 09:34:09','kumar','',55555,88,5);
 
 INSERT INTO cart VALUES (1,10,300.00,1);
 INSERT INTO cart VALUES (2,10,400.00,2);
@@ -154,11 +156,11 @@ INSERT INTO book_order VALUES (4,'2021-01-17 04:34:09',4,4,4,4);
 INSERT INTO book_order VALUES (5,'2021-02-28 03:34:09',5,5,5,5);
 
 
-INSERT INTO user_bookstore VALUES (1, 'vijay', 'joseph', 'vijay98@gmail.com', 'vijay007', '1234567890','male','',1,1);
-INSERT INTO user_bookstore VALUES (2, 'dhoni', 'ms', 'dhoni7@gmail.com', 'dhoni007', '0987654321','male','',2,2);
-INSERT INTO user_bookstore VALUES (3, 'virat', 'kohli', 'kohli18@gmail.com', 'virat007', '1111111111','male','',3,3);
-INSERT INTO user_bookstore VALUES (4, 'mithali', 'raj', 'mithali3@gmail.com', 'mithali007', '2222222222','female','',4,4);
-INSERT INTO user_bookstore VALUES (5, 'ravi', 'ashwin', 'ashwin99@gmail.com', 'ashwin007', '3333333333','male','',5,5);
+INSERT INTO user_book_store VALUES (1,'vijay', 'joseph','vj', 'vijay98@gmail.com', 'vijay007', '1234567890','male','',1,1);
+INSERT INTO user_book_store VALUES (2, 'dhoni', 'ms','msd', 'dhoni7@gmail.com', 'dhoni007', '0987654321','male','',2,2);
+INSERT INTO user_book_store VALUES (3,'virat', 'kohli','vk', 'kohli18@gmail.com', 'virat007', '1111111111','male','',3,3);
+INSERT INTO user_book_store VALUES (4,'mithali', 'raj','mj', 'mithali3@gmail.com', 'mithali007', '2222222222','female','',4,4);
+INSERT INTO user_book_store VALUES (5,'ravi', 'ashwin', 'ash','ashwin99@gmail.com', 'ashwin007', '3333333333','male','',5,5);
 
 INSERT INTO role_bookstore VALUES (1, 'customer', 1);
 INSERT INTO role_bookstore VALUES (2, 'customer', 2);
@@ -172,7 +174,7 @@ INSERT INTO invoice VALUES (3,3,3,3);
 INSERT INTO invoice VALUES (4,4,4,4);
 INSERT INTO invoice VALUES (5,5,5,5);
 
-select * from user_bookstore;
+-- select * from user_book_store;
 
 
 
