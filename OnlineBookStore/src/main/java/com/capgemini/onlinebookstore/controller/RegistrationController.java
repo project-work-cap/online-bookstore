@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.onlinebookstore.domain.UserBookStoreDto;
 import com.capgemini.onlinebookstore.exception.EmptyDataException;
 import com.capgemini.onlinebookstore.exception.InvalidDataException;
+import com.capgemini.onlinebookstore.exception.UserNameExistException;
 import com.capgemini.onlinebookstore.service.RegistrationService;
 
 @RestController
@@ -27,7 +28,7 @@ public class RegistrationController
 	private RegistrationService service;
 	
 	@PostMapping("/register")
-	public ResponseEntity<UserBookStoreDto>addUser(@Valid @RequestBody UserBookStoreDto dto,BindingResult result) throws InvalidDataException, EmptyDataException{
+	public ResponseEntity<UserBookStoreDto>addUser(@Valid @RequestBody UserBookStoreDto dto,BindingResult result) throws InvalidDataException, EmptyDataException, UserNameExistException{
     	return new ResponseEntity<>(service.registerUser(dto,result),HttpStatus.OK);
     }
 	

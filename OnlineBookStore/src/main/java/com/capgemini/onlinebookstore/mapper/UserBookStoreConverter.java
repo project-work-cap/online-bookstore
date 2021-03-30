@@ -25,6 +25,7 @@ public class UserBookStoreConverter
 		userDto.setPhoneNumber(user.getMobileNumber());
 		userDto.setPassword(user.getPassword());
 		userDto.setUserGender(user.getUserGender());
+		userDto.setUserName(user.getUserName());
 		return userDto;
 	}
 
@@ -39,6 +40,7 @@ public class UserBookStoreConverter
 		user.setMobileNumber(userDto.getPhoneNumber());
 		user.setPassword(userDto.getPassword());
 		user.setUserGender(userDto.getUserGender());
+		user.setUserName(userDto.getUserName());
 		return user;
 	}
 }

@@ -17,6 +17,7 @@ public class CategoryBookConverter {
 		CategoryDto dto=new CategoryDto();
 		dto.setCategoryName(category.getCategoryName());
 		dto.setDescription(category.getDescription());
+		dto.setRating(category.getRating());
 		return dto;
 	}
 	
@@ -24,6 +25,7 @@ public class CategoryBookConverter {
 		Category category=new Category();
 		category.setCategoryName(dto.getCategoryName());
 		category.setDescription(dto.getDescription());
+		category.setRating(dto.getRating());
 		return category;
 	}
 

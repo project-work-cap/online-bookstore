@@ -8,6 +8,7 @@ public class CategoryDto {
 	@NotNull(message = "category name must not be empty")
 	private String categoryName;
 	
+	@NotNull(message = "Must enter the ratings")
 	private String rating;
 	
 	@NotNull(message = "Description not be empty")

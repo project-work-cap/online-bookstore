@@ -10,7 +10,7 @@ import com.capgemini.onlinebookstore.entities.Category;
 public interface AdminDao extends JpaRepository<Category, Long>
 {
 
-	@Query("SELECT category FROM Category category where category.categoryName = :categoryName")
+	@Query("SELECT category FROM category category where category.category_name = :categoryName")
 	Optional<Category> findByCategoryName(String categoryName);
 
 }

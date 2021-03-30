@@ -175,11 +175,10 @@ INSERT INTO invoice VALUES (3,3,3,3);
 INSERT INTO invoice VALUES (4,4,4,4);
 INSERT INTO invoice VALUES (5,5,5,5);
 
-<<<<<<< HEAD
+
 select * from category;
-=======
--- select * from user_book_store;
->>>>>>> 958e8f933525ccf3118d27291af6e67b505dd3e6
+
+select * from user_book_store;
 
 
 

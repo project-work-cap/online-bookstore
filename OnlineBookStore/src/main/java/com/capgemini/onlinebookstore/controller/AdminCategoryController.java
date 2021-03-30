@@ -45,10 +45,10 @@ public class AdminCategoryController {
 	}
 	
 	@PutMapping("/updatDescription/{name}")
-	public ResponseEntity<CategoryDto> updateDescription(@PathVariable("name")  String name,@Valid @RequestBody CategoryDto dto)
+	public ResponseEntity<CategoryDto> updateDescription(@PathVariable("name")  String name,@Valid @RequestBody String dto)
 	{
-		System.out.println(dto.getDescription());
-		return new ResponseEntity<>(service.updateDescription(name,dto.getDescription()),HttpStatus.OK);
+		System.out.println(dto);
+		return new ResponseEntity<>(service.updateDescription(name,dto),HttpStatus.OK);
 	}
 	
 }

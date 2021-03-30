@@ -16,4 +16,7 @@ public interface RegistrationDao extends JpaRepository<UserBookStore, Long>
 	@Query("SELECT user FROM UserBookStore user where user.emailId = :emailId")
 	Optional<UserBookStore> findByEmailId(String emailId);
 
+	@Query("SELECT user FROM UserBookStore user where user.user_name = :userName")
+	Optional<UserBookStore> findByUserName(String userName);
+
 }

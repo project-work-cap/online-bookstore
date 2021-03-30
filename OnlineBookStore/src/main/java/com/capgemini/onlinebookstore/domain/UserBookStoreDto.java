@@ -22,8 +22,9 @@ public class UserBookStoreDto
 	@NotNull(message = "Phone Number name must not be empty")
 	@Size(min = 10 , max = 10)
 	private String phoneNumber;
-	@NotNull(message = "password name must not be empty")
+	@NotNull(message = "userGender name must not be empty")
 	private String userGender;
+	@NotNull(message = "UserName name must not be empty")
 	private String userName;
 	private long userId;
 	
