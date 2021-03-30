@@ -35,8 +35,10 @@ public class RegisterServiceImp implements RegistrationService
 	@Override
 	public UserBookStoreDto registerUser(UserBookStoreDto dto,BindingResult result) throws InvalidDataException, UserNameExistException  {
 		validator.validate(dto, result);
-		if(result.hasErrors()) 
+		if(result.hasErrors()) {
+			System.out.println("error");
 			throw new InvalidDataException(result.getFieldError().getDefaultMessage());
+		}
 		UserBookStore user=converter.dtoToModel(dto);
 		if(findByEmailId(user.getEmailId()))
 			throw new EmailIdExistException("Try another email Id. This id exist");
