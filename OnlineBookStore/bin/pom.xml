@@ -27,6 +27,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -45,6 +46,8 @@
     <artifactId>spring-boot-devtools</artifactId>
 </dependency>
 		
+=======
+>>>>>>> 958e8f933525ccf3118d27291af6e67b505dd3e6
 	</dependencies>
 
 	<build>
