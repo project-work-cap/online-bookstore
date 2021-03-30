@@ -38,7 +38,7 @@ CREATE TABLE category(
 	category_id INT PRIMARY KEY,
 	category_name VARCHAR(50),
 	rating VARCHAR(50),
-	book_description VARCHAR(50)
+	description VARCHAR(50)
 );
 
 CREATE TABLE user_address(
@@ -111,6 +111,7 @@ ADD FOREIGN KEY (book_order_id) REFERENCES book_order(book_order_id),
 ADD FOREIGN KEY (user_id) REFERENCES user_bookstore(user_id),
 ADD FOREIGN KEY (address_id) REFERENCES user_address(address_id);
 
+USE onlinebookstore;
 INSERT INTO category VALUES (1,'thriller','good','a book containing thriller story');
 INSERT INTO category VALUES (2,'horror','best','a book containing horror story');
 INSERT INTO category VALUES (3,'scifi','worst','a book containing scifi story');
@@ -172,7 +173,7 @@ INSERT INTO invoice VALUES (3,3,3,3);
 INSERT INTO invoice VALUES (4,4,4,4);
 INSERT INTO invoice VALUES (5,5,5,5);
 
-select * from user_bookstore;
+select * from category;
 
 
 
